@@ -32,19 +32,19 @@
 			<!-- text input -->
 			<div class="form-group">
 				<label>Sitename</label>
-				<input type="text" class="form-control" placeholder="CRM" name="sitename" value="{{$configs->sitename}}">
+				<input type="text" class="form-control" placeholder="Lara" name="sitename" value="{{$configs->sitename}}">
 			</div>
 			<div class="form-group">
 				<label>Sitename First Word</label>
-				<input type="text" class="form-control" placeholder="CRM" name="sitename_part1" value="{{$configs->sitename_part1}}">
+				<input type="text" class="form-control" placeholder="Lara" name="sitename_part1" value="{{$configs->sitename_part1}}">
 			</div>
 			<div class="form-group">
 				<label>Sitename Second Word</label>
-				<input type="text" class="form-control" placeholder="Admin" name="sitename_part2" value="{{$configs->sitename_part2}}">
+				<input type="text" class="form-control" placeholder="Admin 1.0" name="sitename_part2" value="{{$configs->sitename_part2}}">
 			</div>
 			<div class="form-group">
 				<label>Sitename Short (2/3 Characters)</label>
-				<input type="text" class="form-control" placeholder="CRMA" maxlength="4" name="sitename_short" value="{{$configs->sitename_short}}">
+				<input type="text" class="form-control" placeholder="LA" maxlength="2" name="sitename_short" value="{{$configs->sitename_short}}">
 			</div>
 			<div class="form-group">
 				<label>Site Description</label>
@@ -92,7 +92,7 @@
 					@endforeach
 				</select>
 			</div>
-
+			
 			<div class="form-group">
 				<label>Layout</label>
 				<select class="form-control" name="layout">
@@ -116,10 +116,10 @@
 @endsection
 
 @push('styles')
-<link rel="stylesheet" type="text/css" href="{{ asset('la-assets/plugins/datatables/datatables.min.css') }}"/>
+<link rel="stylesheet" type="text/css" href="{{ asset('ca-assets/plugins/datatables/datatables.min.css') }}"/>
 @endpush
 
 @push('scripts')
-<script src="{{ asset('la-assets/plugins/datatables/datatables.min.js') }}"></script>
+<script src="{{ asset('ca-assets/plugins/datatables/datatables.min.js') }}"></script>
 
 @endpush

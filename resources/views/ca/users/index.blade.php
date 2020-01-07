@@ -1,7 +1,7 @@
 @extends("ca.layouts.app")
 
 @section("contentheader_title", "Users")
-@section("contentheader_description", "users listing")
+@section("contentheader_description", "Users listing")
 @section("section", "Users")
 @section("sub_section", "Listing")
 @section("htmlheader_title", "Users Listing")
@@ -37,7 +37,7 @@
 		</tr>
 		</thead>
 		<tbody>
-
+			
 		</tbody>
 		</table>
 	</div>
@@ -46,11 +46,11 @@
 @endsection
 
 @push('styles')
-<link rel="stylesheet" type="text/css" href="{{ asset('la-assets/plugins/datatables/datatables.min.css') }}"/>
+<link rel="stylesheet" type="text/css" href="{{ asset('ca-assets/plugins/datatables/datatables.min.css') }}"/>
 @endpush
 
 @push('scripts')
-<script src="{{ asset('la-assets/plugins/datatables/datatables.min.js') }}"></script>
+<script src="{{ asset('ca-assets/plugins/datatables/datatables.min.js') }}"></script>
 <script>
 $(function () {
 	$("#example1").DataTable({
@@ -67,7 +67,7 @@ $(function () {
 		@endif
 	});
 	$("#user-add-form").validate({
-
+		
 	});
 });
 </script>

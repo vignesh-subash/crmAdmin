@@ -1,7 +1,7 @@
 @extends("ca.layouts.app")
 
 @section("contentheader_title", "Backups")
-@section("contentheader_description", "backups listing")
+@section("contentheader_description", "Backups listing")
 @section("section", "Backups")
 @section("sub_section", "Listing")
 @section("htmlheader_title", "Backups Listing")
@@ -39,7 +39,7 @@
 		</tr>
 		</thead>
 		<tbody>
-
+			
 		</tbody>
 		</table>
 	</div>
@@ -48,11 +48,11 @@
 @endsection
 
 @push('styles')
-<link rel="stylesheet" type="text/css" href="{{ asset('la-assets/plugins/datatables/datatables.min.css') }}"/>
+<link rel="stylesheet" type="text/css" href="{{ asset('ca-assets/plugins/datatables/datatables.min.css') }}"/>
 @endpush
 
 @push('scripts')
-<script src="{{ asset('la-assets/plugins/datatables/datatables.min.js') }}"></script>
+<script src="{{ asset('ca-assets/plugins/datatables/datatables.min.js') }}"></script>
 <script>
 $(function () {
 	$("#example1").DataTable({
@@ -68,7 +68,7 @@ $(function () {
 		columnDefs: [ { orderable: false, targets: [-1] }],
 		@endif
 	});
-
+	
 	$("#CreateBackup").on("click", function() {
 		$.ajax({
 			url: "{{ url(config('crmadmin.adminRoute') . '/create_backup_ajax') }}",
@@ -89,7 +89,7 @@ $(function () {
 						position: "top-right",
 						timeout: 0,
 						type: "success",
-						thumbnail: '<img width="40" height="40" style="display: inline-block;" src="{{ asset('la-assets/img/laraadmin_logo_white.png') }}" data-src="assets/img/profiles/avatar.jpg" data-src-retina="assets/img/profiles/avatar2x.jpg" alt="">'
+						thumbnail: '<img width="40" height="40" style="display: inline-block;" src="{{ asset('ca-assets/img/crmadmin_logo_white.png') }}" data-src="assets/img/profiles/avatar.jpg" data-src-retina="assets/img/profiles/avatar2x.jpg" alt="">'
 					}).show();
 					setTimeout(function() {
 						window.location.reload();
@@ -103,7 +103,7 @@ $(function () {
 						position: "top-right",
 						timeout: 0,
 						type: "danger",
-						thumbnail: '<img width="40" height="40" style="display: inline-block;" src="{{ asset('la-assets/img/laraadmin_logo_white.png') }}" data-src="assets/img/profiles/avatar.jpg" data-src-retina="assets/img/profiles/avatar2x.jpg" alt="">'
+						thumbnail: '<img width="40" height="40" style="display: inline-block;" src="{{ asset('ca-assets/img/crmadmin_logo_white.png') }}" data-src="assets/img/profiles/avatar.jpg" data-src-retina="assets/img/profiles/avatar2x.jpg" alt="">'
 					}).show();
 					console.error(data.output);
 				}

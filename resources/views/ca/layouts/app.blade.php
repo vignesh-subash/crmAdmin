@@ -19,7 +19,7 @@
 		@if(!isset($no_header))
 			@include('ca.layouts.partials.contentheader')
 		@endif
-
+		
 		<!-- Main content -->
 		<section class="content {{ $no_padding or '' }}">
 			<!-- Your Page Content Here -->

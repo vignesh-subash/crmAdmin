@@ -1,4 +1,11 @@
 <?php
+/**
+ * Migration generated using CrmAdmin
+ * Help: http://crmadmin.com
+ * CrmAdmin is open-sourced software licensed under the MIT license.
+ * Developed by: Kipl IT Solutions
+ * Developer Website: http://kipl.com
+ */
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
@@ -28,6 +35,7 @@ class CreateModuleFieldsTable extends Migration
             $table->boolean('required')->default(false);
             $table->text('popup_vals');
             $table->integer('sort')->unsigned()->default(0);
+			$table->boolean('listing_col')->default(true);
             $table->timestamps();
         });
     }

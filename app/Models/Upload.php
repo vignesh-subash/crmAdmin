@@ -1,7 +1,10 @@
 <?php
 /**
- * Model genrated using CRM Admin
- * Help: http://
+ * Model generated using CrmAdmin
+ * Help: http://crmadmin.com
+ * CrmAdmin is open-sourced software licensed under the MIT license.
+ * Developed by: Kipl IT Solutions
+ * Developer Website: http://kipl.com
  */
 
 namespace App\Models;
@@ -12,11 +15,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Upload extends Model
 {
     use SoftDeletes;
-
+	
 	protected $table = 'uploads';
-
+	
 	protected $hidden = [
-
+        
     ];
 
 	protected $guarded = [];
@@ -30,7 +33,7 @@ class Upload extends Model
     {
         return $this->belongsTo('App\User');
     }
-
+    
     /**
      * Get File path
      */

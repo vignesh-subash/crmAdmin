@@ -1,5 +1,7 @@
 <?php
 
+use Kipl\Crmadmin\Helpers\CAHelper;
+
 /* ================== Homepage ================== */
 Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@index');
@@ -15,14 +17,14 @@ Route::get('files/{hash}/{name}', 'CA\UploadsController@get_file');
 */
 
 $as = "";
-if(\Kipl\Crmadmin\Helpers\CAHelper::laravel_ver() == 5.5) {
+if(CAHelper::laravel_ver() == 5.5 || CAHelper::laravel_ver() == 5.6) {
 	$as = config('crmadmin.adminRoute').'.';
 
-	// Routes for Laravel 5.3
+	// Routes for Laravel 5.5
 	Route::get('/logout', 'Auth\LoginController@logout');
 }
 
-Route::group(['as' => 'admin.', 'middleware' => ['auth', 'permission:ADMIN_PANEL']], function () {
+Route::group(['as' => $as, 'middleware' => ['auth', 'permission:ADMIN_PANEL']], function () {
 
 	/* ================== Dashboard ================== */
 

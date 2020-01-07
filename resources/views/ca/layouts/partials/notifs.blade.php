@@ -18,7 +18,7 @@
 									<a href="#">
 										<div class="pull-left">
 											<!-- User Image -->
-											<img src="@if(isset(Auth::user()->email)) {{ Gravatar::fallback(asset('la-assets/img/user2-160x160.jpg'))->get(Auth::user()->email) }} @else asset('/img/user2-160x160.jpg' @endif" class="img-circle" alt="User Image"/>
+											<img src="@if(isset(Auth::user()->email)) {{ Gravatar::fallback(asset('ca-assets/img/user2-160x160.jpg'))->get(Auth::user()->email) }} @else asset('/img/user2-160x160.jpg' @endif" class="img-circle" alt="User Image"/>
 										</div>
 										<!-- Message title and timestamp -->
 										<h4>
@@ -105,14 +105,14 @@
 						<!-- Menu Toggle Button -->
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 							<!-- The user image in the navbar-->
-							<img src="{{ Gravatar::fallback(asset('la-assets/img/user2-160x160.jpg'))->get(Auth::user()->email) }}" class="user-image" alt="User Image"/>
+							<img src="{{ Gravatar::fallback(asset('ca-assets/img/user2-160x160.jpg'))->get(Auth::user()->email) }}" class="user-image" alt="User Image"/>
 							<!-- hidden-xs hides the username on small devices so only the image appears. -->
 							<span class="hidden-xs">{{ Auth::user()->name }}</span>
 						</a>
 						<ul class="dropdown-menu">
 							<!-- The user image in the menu -->
 							<li class="user-header">
-								<img src="{{ Gravatar::fallback(asset('la-assets/img/user2-160x160.jpg'))->get(Auth::user()->email) }}" class="img-circle" alt="User Image" />
+								<img src="{{ Gravatar::fallback(asset('ca-assets/img/user2-160x160.jpg'))->get(Auth::user()->email) }}" class="img-circle" alt="User Image" />
 								<p>
 									{{ Auth::user()->name }}
 									<?php
@@ -122,7 +122,7 @@
 								</p>
 							</li>
 							<!-- Menu Body -->
-							@role(('SUPER_ADMIN'))
+							@role("SUPER_ADMIN")
 							<li class="user-body">
 								<div class="col-xs-6 text-center mb10">
 									<a href="{{ url(config('crmadmin.adminRoute') . '/lacodeeditor') }}"><i class="fa fa-code"></i> <span>Editor</span></a>
@@ -157,7 +157,7 @@
 				<!-- Control Sidebar Toggle Button -->
 				<li>
 					<a href="#" data-toggle="control-sidebar"><i class="fa fa-comments-o"></i> <span class="label label-warning">10</span></a>
-
+					
 				</li>
 				@endif
 			</ul>

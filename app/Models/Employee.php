@@ -1,7 +1,10 @@
 <?php
 /**
- * Model genrated using CRM Admin
- * Help: http://
+ * Model generated using CrmAdmin
+ * Help: http://crmadmin.com
+ * CrmAdmin is open-sourced software licensed under the MIT license.
+ * Developed by: Kipl IT Solutions
+ * Developer Website: http://kipl.com
  */
 
 namespace App\Models;
@@ -13,13 +16,11 @@ class Employee extends Model
 {
     use SoftDeletes;
 
-	protected $table = 'employees';
+    protected $table = 'employees';
 
-	protected $hidden = [
+    protected $hidden = [];
 
-    ];
+    protected $guarded = [];
 
-	protected $guarded = [];
-
-	protected $dates = ['deleted_at'];
+    protected $dates = ['deleted_at'];
 }

@@ -1,7 +1,10 @@
 <?php
 /**
- * Controller genrated using CRM Admin
- * Help: http://
+ * Controller generated using CrmAdmin
+ * Help: http://crmAdmin.com
+ * CrmAdmin is open-sourced software licensed under the MIT license.
+ * Developed by: Kipl
+ * Developer Website: http://kipl.com
  */
 
 namespace App\Http\Controllers\CA;
@@ -18,26 +21,13 @@ use Kipl\Crmadmin\Models\Module;
 use Kipl\Crmadmin\Models\ModuleFields;
 use Kipl\Crmadmin\Helpers\CAHelper;
 use Artisan;
+
 use App\Models\Backup;
 
 class BackupsController extends Controller
 {
 	public $show_action = true;
-	public $view_col = 'name';
-	public $listing_cols = ['id', 'name', 'file_name'];
 	public $backup_filepath = "/storage/app/http---localhost/";
-
-	public function __construct() {
-		// Field Access of Listing Columns
-		if(CAHelper::laravel_ver() == 5.5) {
-			$this->middleware(function ($request, $next) {
-				$this->listing_cols = ModuleFields::listingColumnAccessScan('Backups', $this->listing_cols);
-				return $next($request);
-			});
-		} else {
-			$this->listing_cols = ModuleFields::listingColumnAccessScan('Backups', $this->listing_cols);
-		}
-	}
 
 	/**
 	 * Display a listing of the Backups.
@@ -51,11 +41,11 @@ class BackupsController extends Controller
 		if(Module::hasAccess($module->id)) {
 			return View('ca.backups.index', [
 				'show_actions' => $this->show_action,
-				'listing_cols' => $this->listing_cols,
+				'listing_cols' => Module::getListingColumns('Backups'),
 				'module' => $module
 			]);
 		} else {
-            return redirect(config('crmadmin.adminRoute')."/");
+            return redirect(config('crmAdmin.adminRoute')."/");
         }
 	}
 
@@ -133,9 +123,9 @@ class BackupsController extends Controller
 			$backup->delete();
 
 			// Redirecting to index() method
-			return redirect()->route(config('crmadmin.adminRoute') . '.backups.index');
+			return redirect()->route(config('crmAdmin.adminRoute') . '.backups.index');
 		} else {
-			return redirect(config('crmadmin.adminRoute')."/");
+			return redirect(config('crmAdmin.adminRoute')."/");
 		}
 	}
 
@@ -144,22 +134,25 @@ class BackupsController extends Controller
 	 *
 	 * @return
 	 */
-	public function dtajax()
+	public function dtajax(Request $request)
 	{
-		$values = DB::table('backups')->select($this->listing_cols)->orderBy('created_at', 'desc')->whereNull('deleted_at');
+		$module = Module::get('Backups');
+		$listing_cols = Module::getListingColumns('Backups');
+
+		$values = DB::table('backups')->select($listing_cols)->whereNull('deleted_at');
 		$out = Datatables::of($values)->make();
 		$data = $out->getData();
 
 		$fields_popup = ModuleFields::getModuleFields('Backups');
 
 		for($i=0; $i < count($data->data); $i++) {
-			for ($j=0; $j < count($this->listing_cols); $j++) {
-				$col = $this->listing_cols[$j];
+			for ($j=0; $j < count($listing_cols); $j++) {
+				$col = $listing_cols[$j];
 				if($fields_popup[$col] != null && starts_with($fields_popup[$col]->popup_vals, "@")) {
 					$data->data[$i][$j] = ModuleFields::getFieldValue($fields_popup[$col], $data->data[$i][$j]);
 				}
-				if($col == $this->view_col) {
-					$data->data[$i][$j] = '<a href="'.url(config('crmadmin.adminRoute') . '/backups/'.$data->data[$i][0]).'">'.$data->data[$i][$j].'</a>';
+				if($col == $module->view_col) {
+					$data->data[$i][$j] = '<a href="'.url(config('crmAdmin.adminRoute') . '/downloadBackup/'.$data->data[$i][0]).'">'.$data->data[$i][$j].'</a>';
 				} else if($col == "file_name") {
 				   $data->data[$i][$j] = $this->backup_filepath.$data->data[$i][$j];
 				}
@@ -167,10 +160,10 @@ class BackupsController extends Controller
 
 			if($this->show_action) {
 				$output = '';
-				$output .= '<a href="'.url(config('crmadmin.adminRoute') . '/downloadBackup/'.$data->data[$i][0]).'" class="btn btn-warning btn-xs" style="display:inline;padding:2px 5px 3px 5px;"><i class="fa fa-download"></i></a>';
+				$output .= '<a href="'.url(config('crmAdmin.adminRoute') . '/downloadBackup/'.$data->data[$i][0]).'" class="btn btn-warning btn-xs" style="display:inline;padding:2px 5px 3px 5px;"><i class="fa fa-download"></i></a>';
 
 				if(Module::hasAccess("Backups", "delete")) {
-					$output .= Form::open(['route' => [config('crmadmin.adminRoute') . '.backups.destroy', $data->data[$i][0]], 'method' => 'delete', 'style'=>'display:inline']);
+					$output .= Form::open(['route' => [config('crmAdmin.adminRoute') . '.backups.destroy', $data->data[$i][0]], 'method' => 'delete', 'style'=>'display:inline']);
 					$output .= ' <button class="btn btn-danger btn-xs" type="submit"><i class="fa fa-times"></i></button>';
 					$output .= Form::close();
 				}

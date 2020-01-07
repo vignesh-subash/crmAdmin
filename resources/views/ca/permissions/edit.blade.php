@@ -1,14 +1,14 @@
 @extends("ca.layouts.app")
 
 @section("contentheader_title")
-	<a href="{{ url(config('crmadmin.adminRoute') . '/permissions') }}">Permissions</a> :
+	<a href="{{ url(config('crmadmin.adminRoute') . '/permissions') }}">Permission</a> :
 @endsection
 @section("contentheader_description", $permission->$view_col)
 @section("section", "Permissions")
 @section("section_url", url(config('crmadmin.adminRoute') . '/permissions'))
 @section("sub_section", "Edit")
 
-@section("htmlheader_title", "Permission Edit : ".$permission->$view_col)
+@section("htmlheader_title", "Permissions Edit : ".$permission->$view_col)
 
 @section("main-content")
 
@@ -24,14 +24,14 @@
 
 <div class="box">
 	<div class="box-header">
-
+		
 	</div>
 	<div class="box-body">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
 				{!! Form::model($permission, ['route' => [config('crmadmin.adminRoute') . '.permissions.update', $permission->id ], 'method'=>'PUT', 'id' => 'permission-edit-form']) !!}
 					@ca_form($module)
-
+					
 					{{--
 					@ca_input($module, 'name')
 					@ca_input($module, 'display_name')
@@ -39,7 +39,7 @@
 					--}}
                     <br>
 					<div class="form-group">
-						{!! Form::submit( 'Update', ['class'=>'btn btn-success']) !!} <button class="btn btn-default pull-right"><a href="{{ url(config('crmadmin.adminRoute') . '/permissions') }}">Cancel</a></button>
+						{!! Form::submit( 'Update', ['class'=>'btn btn-success']) !!} <a href="{{ url(config('crmadmin.adminRoute') . '/permissions') }}" class="btn btn-default pull-right">Cancel</a>
 					</div>
 				{!! Form::close() !!}
 			</div>
@@ -53,7 +53,7 @@
 <script>
 $(function () {
 	$("#permission-edit-form").validate({
-
+		
 	});
 });
 </script>

@@ -24,7 +24,7 @@
 
 <div class="box">
 	<div class="box-header">
-
+		
 	</div>
 	<div class="box-body">
 		<div class="row">
@@ -37,7 +37,7 @@
 					@ca_input($module, 'dept')
 					<br>
 					<div class="form-group">
-						{!! Form::submit( 'Update', ['class'=>'btn btn-success']) !!} <button class="btn btn-default pull-right"><a href="{{ url(config('crmadmin.adminRoute') . '/roles') }}">Cancel</a></button>
+						{!! Form::submit( 'Update', ['class'=>'btn btn-success']) !!} <a href="{{ url(config('crmadmin.adminRoute') . '/roles') }}" class="btn btn-default pull-right">Cancel</a>
 					</div>
 				{!! Form::close() !!}
 			</div>
@@ -51,7 +51,7 @@
 <script>
 $(function () {
 	$("#role-edit-form").validate({
-
+		
 	});
 });
 </script>

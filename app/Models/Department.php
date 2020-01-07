@@ -1,7 +1,10 @@
 <?php
 /**
- * Model genrated using CRM Admin
- * Help: http://
+ * Model generated using CrmAdmin
+ * Help: http://crmadmin.com
+ * CrmAdmin is open-sourced software licensed under the MIT license.
+ * Developed by: Kipl IT Solutions
+ * Developer Website: http://kipl.com
  */
 
 namespace App\Models;

@@ -85,7 +85,7 @@ class RegisterController extends Controller
     {
         // TODO: This is Not Standard. Need to find alternative
         Eloquent::unguard();
-
+        
         $employee = Employee::create([
             'name' => $data['name'],
             'designation' => "Super Admin",
@@ -94,15 +94,15 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'gender' => 'Male',
             'dept' => "1",
-            'city' => "Chennai",
-            'address' => "Kodambakkam, Chennai 600034",
+            'city' => "Pune",
+            'address' => "Karve nagar, Pune 411030",
             'about' => "About user / biography",
             'date_birth' => date("Y-m-d"),
             'date_hire' => date("Y-m-d"),
             'date_left' => date("Y-m-d"),
             'salary_cur' => 0,
         ]);
-
+        
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -112,7 +112,7 @@ class RegisterController extends Controller
         ]);
         $role = Role::where('name', 'SUPER_ADMIN')->first();
         $user->attachRole($role);
-
+    
         return $user;
     }
 }

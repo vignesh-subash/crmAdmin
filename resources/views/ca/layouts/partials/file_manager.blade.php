@@ -1,4 +1,4 @@
-<script src="{{ asset('la-assets/plugins/dropzone/dropzone.js') }}"></script>
+<script src="{{ asset('ca-assets/plugins/dropzone/dropzone.js') }}"></script>
 
 <div class="modal fade" id="fm" role="dialog" aria-labelledby="fileManagerLabel">
 	<input type="hidden" id="image_selecter_origin" value="">
@@ -16,7 +16,7 @@
 							<form action="{{ url(config('crmadmin.adminRoute') . '/upload_files')}}" id="fm_dropzone" enctype="multipart/form-data" method="POST">
 								{{ csrf_field() }}
 								<div class="dz-message"><i class="fa fa-cloud-upload"></i><br>Drop files here to upload</div>
-
+								
 								@if(!config('crmadmin.uploads.private_uploads'))
 									<label class="fm_folder_title">Is Public ?</label>
 									{{ Form::checkbox("public", "public", config("crmadmin.uploads.default_public"), []) }}
@@ -36,7 +36,7 @@
 						</div>
 						<div class="fm_file_selector">
 							<ul>
-
+								
 							</ul>
 						</div>
 					</div>

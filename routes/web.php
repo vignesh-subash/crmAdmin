@@ -18,7 +18,3 @@ Route::get('/', function () {
 /* ================== Homepage + Admin Routes ================== */
 
 require __DIR__.'/admin_routes.php';
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

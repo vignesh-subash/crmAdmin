@@ -1,4 +1,11 @@
 <?php
+/**
+ * Code generated using CrmAdmin
+ * Help: http://crmadmin.com
+ * CrmAdmin is open-sourced software licensed under the MIT license.
+ * Developed by: Kipl IT Solutions
+ * Developer Website: http://kipl.com
+ */
 
 use Illuminate\Database\Seeder;
 
@@ -22,7 +29,7 @@ class DatabaseSeeder extends Seeder
 	public function run()
 	{
 
-		/* ================ LaraAdmin Seeder Code ================ */
+		/* ================ CrmAdmin Seeder Code ================ */
 
 		// Generating Module Menus
 		$modules = Module::all();
@@ -80,64 +87,64 @@ class DatabaseSeeder extends Seeder
 
 		$role->attachPermission($perm);
 
-		// Generate CRM Admin Default Configurations
+		// Generate CrmAdmin Default Configurations
 
-		$caconfig = new CAConfigs;
-		$caconfig->key = "sitename";
-		$caconfig->value = "CRM Admin 1.0";
-		$caconfig->save();
+		$laconfig = new CAConfigs;
+		$laconfig->key = "sitename";
+		$laconfig->value = "CrmAdmin 1.0";
+		$laconfig->save();
 
-		$caconfig = new CAConfigs;
-		$caconfig->key = "sitename_part1";
-		$caconfig->value = "crm";
-		$caconfig->save();
+		$laconfig = new CAConfigs;
+		$laconfig->key = "sitename_part1";
+		$laconfig->value = "Lara";
+		$laconfig->save();
 
-		$caconfig = new CAConfigs;
-		$caconfig->key = "sitename_part2";
-		$caconfig->value = "Admin 1.0";
-		$caconfig->save();
+		$laconfig = new CAConfigs;
+		$laconfig->key = "sitename_part2";
+		$laconfig->value = "Admin 1.0";
+		$laconfig->save();
 
-		$caconfig = new CAConfigs;
-		$caconfig->key = "sitename_short";
-		$caconfig->value = "CRMA";
-		$caconfig->save();
+		$laconfig = new CAConfigs;
+		$laconfig->key = "sitename_short";
+		$laconfig->value = "LA";
+		$laconfig->save();
 
-		$caconfig = new CAConfigs;
-		$caconfig->key = "site_description";
-		$caconfig->value = "CRM Admin is a open-source Laravel Admin Panel for quick-start Admin based applications and boilerplate for CRM or CMS systems.";
-		$caconfig->save();
+		$laconfig = new CAConfigs;
+		$laconfig->key = "site_description";
+		$laconfig->value = "CrmAdmin is a open-source Laravel Admin Panel for quick-start Admin based applications and boilerplate for CRM or CMS systems.";
+		$laconfig->save();
 
 		// Display Configurations
 
-		$caconfig = new CAConfigs;
-		$caconfig->key = "sidebar_search";
-		$caconfig->value = "1";
-		$caconfig->save();
+		$laconfig = new CAConfigs;
+		$laconfig->key = "sidebar_search";
+		$laconfig->value = "1";
+		$laconfig->save();
 
-		$caconfig = new CAConfigs;
-		$caconfig->key = "show_messages";
-		$caconfig->value = "1";
-		$caconfig->save();
+		$laconfig = new CAConfigs;
+		$laconfig->key = "show_messages";
+		$laconfig->value = "1";
+		$laconfig->save();
 
-		$caconfig = new CAConfigs;
-		$caconfig->key = "show_notifications";
-		$caconfig->value = "1";
-		$caconfig->save();
+		$laconfig = new CAConfigs;
+		$laconfig->key = "show_notifications";
+		$laconfig->value = "1";
+		$laconfig->save();
 
 		$laconfig = new CAConfigs;
 		$laconfig->key = "show_tasks";
 		$laconfig->value = "1";
 		$laconfig->save();
 
-		$caconfig = new CAConfigs;
-		$caconfig->key = "show_rightsidebar";
-		$caconfig->value = "1";
-		$caconfig->save();
+		$laconfig = new CAConfigs;
+		$laconfig->key = "show_rightsidebar";
+		$laconfig->value = "1";
+		$laconfig->save();
 
-		$caconfig = new CAConfigs;
-		$caconfig->key = "skin";
-		$caconfig->value = "skin-white";
-		$caconfig->save();
+		$laconfig = new CAConfigs;
+		$laconfig->key = "skin";
+		$laconfig->value = "skin-white";
+		$laconfig->save();
 
 		$laconfig = new CAConfigs;
 		$laconfig->key = "layout";
@@ -146,15 +153,18 @@ class DatabaseSeeder extends Seeder
 
 		// Admin Configurations
 
-		$caconfig = new CAConfigs;
-		$caconfig->key = "default_email";
-		$caconfig->value = "test@example.com";
-		$caconfig->save();
+		$laconfig = new CAConfigs;
+		$laconfig->key = "default_email";
+		$laconfig->value = "test@example.com";
+		$laconfig->save();
 
 		$modules = Module::all();
 		foreach ($modules as $module) {
 			$module->is_gen=true;
 			$module->save();
 		}
+
+		/* ================ Call Other Seeders ================ */
+
 	}
 }

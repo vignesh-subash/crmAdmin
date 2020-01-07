@@ -4,7 +4,7 @@
         <title>Page / Record not found.</title>
 
         <link href="https://fonts.googleapis.com/css?family=Roboto:200,400" rel="stylesheet" type="text/css">
-		<link href="{{ asset('la-assets/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css" />
+		<link href="{{ asset('ca-assets/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css" />
 
         <style>
             html, body {
@@ -53,12 +53,12 @@
 				@else
 					<div class="title">Page not found</div>
 				@endif
-
+				
 				@if(Auth::guest())
-					<a href="{{ url('/') }}">Homepage</a> |
+					<a href="{{ url('/') }}">Homepage</a> | 
 					<a href="javascript:history.back()">Go Back</a>
 				@else
-					<a href="{{ url(config('crmadmin.adminRoute')) }}">Dashboard.</a> |
+					<a href="{{ url(config('crmadmin.adminRoute')) }}">Dashboard.</a> | 
 					<a href="javascript:history.back()">Go Back</a>
 				@endif
             </div>

@@ -39,7 +39,7 @@
 		</tr>
 		</thead>
 		<tbody>
-
+			
 		</tbody>
 		</table>
 	</div>
@@ -76,11 +76,11 @@
 @endsection
 
 @push('styles')
-<link rel="stylesheet" type="text/css" href="{{ asset('la-assets/plugins/datatables/datatables.min.css') }}"/>
+<link rel="stylesheet" type="text/css" href="{{ asset('ca-assets/plugins/datatables/datatables.min.css') }}"/>
 @endpush
 
 @push('scripts')
-<script src="{{ asset('la-assets/plugins/datatables/datatables.min.js') }}"></script>
+<script src="{{ asset('ca-assets/plugins/datatables/datatables.min.js') }}"></script>
 <script>
 $(function () {
 	$("#example1").DataTable({
@@ -97,7 +97,7 @@ $(function () {
 		@endif
 	});
 	$("#role-add-form").validate({
-
+		
 	});
 });
 </script>

@@ -32,6 +32,6 @@
 		</a>
 		@include('ca.layouts.partials.notifs')
 	@endif
-
+	
 	</nav>
 </header>
