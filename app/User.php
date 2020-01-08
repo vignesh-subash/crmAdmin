@@ -43,7 +43,7 @@ class User extends Authenticatable implements AuthorizableContract, CanResetPass
      * @var array
      */
 	protected $hidden = [
-		'password', 'remember_token',
+		'password', 'remember_token', 'id',
     ];
 
     // protected $dates = ['deleted_at'];

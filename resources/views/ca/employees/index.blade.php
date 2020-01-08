@@ -60,19 +60,19 @@
 
                     {{--
                     @ca_input($module, 'name')
-					@ca_input($module, 'designation')
-					@ca_input($module, 'gender')
-					@ca_input($module, 'mobile')
-					@ca_input($module, 'mobile2')
-					@ca_input($module, 'email')
-					@ca_input($module, 'dept')
-					@ca_input($module, 'city')
-					@ca_input($module, 'address')
-					@ca_input($module, 'about')
-					@ca_input($module, 'date_birth')
-					@ca_input($module, 'date_hire')
-					@ca_input($module, 'date_left')
-					@ca_input($module, 'salary_cur')
+          					@ca_input($module, 'designation')
+          					@ca_input($module, 'gender')
+          					@ca_input($module, 'mobile')
+          					@ca_input($module, 'mobile2')
+          					@ca_input($module, 'email')
+          					@ca_input($module, 'dept')
+          					@ca_input($module, 'city')
+          					@ca_input($module, 'address')
+          					@ca_input($module, 'about')
+          					@ca_input($module, 'date_birth')
+          					@ca_input($module, 'date_hire')
+          					@ca_input($module, 'date_left')
+          					@ca_input($module, 'salary_cur')
                     --}}
                 </div>
             </div>

@@ -24,29 +24,29 @@
 
 <div class="box">
     <div class="box-header">
-        
+
     </div>
     <div class="box-body">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 {!! Form::model($employee, ['route' => [config('crmadmin.adminRoute') . '.employees.update', $employee->id ], 'method'=>'PUT', 'id' => 'employee-edit-form']) !!}
                     @ca_form($module)
-                    
+
                     {{--
                     @ca_input($module, 'name')
-					@ca_input($module, 'designation')
-					@ca_input($module, 'gender')
-					@ca_input($module, 'mobile')
-					@ca_input($module, 'mobile2')
-					@ca_input($module, 'email')
-					@ca_input($module, 'dept')
-					@ca_input($module, 'city')
-					@ca_input($module, 'address')
-					@ca_input($module, 'about')
-					@ca_input($module, 'date_birth')
-					@ca_input($module, 'date_hire')
-					@ca_input($module, 'date_left')
-					@ca_input($module, 'salary_cur')
+          					@ca_input($module, 'designation')
+          					@ca_input($module, 'gender')
+          					@ca_input($module, 'mobile')
+          					@ca_input($module, 'mobile2')
+          					@ca_input($module, 'email')
+          					@ca_input($module, 'dept')
+          					@ca_input($module, 'city')
+          					@ca_input($module, 'address')
+          					@ca_input($module, 'about')
+          					@ca_input($module, 'date_birth')
+          					@ca_input($module, 'date_hire')
+          					@ca_input($module, 'date_left')
+          					@ca_input($module, 'salary_cur')
                     --}}
                     <br>
                     <div class="form-group">
@@ -64,7 +64,7 @@
 <script>
 $(function () {
     $("#employee-edit-form").validate({
-        
+
     });
 });
 </script>

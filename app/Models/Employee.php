@@ -18,7 +18,7 @@ class Employee extends Model
 
     protected $table = 'employees';
 
-    protected $hidden = [];
+    protected $hidden = ['id'];
 
     protected $guarded = [];
 
